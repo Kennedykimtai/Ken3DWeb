@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(w1car.jpg);
+    background-size: cover;
+    transform-style: preserve-3d;
+}
+.box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style:preserve-3d ;
+    transition: 1s;
+    transform: perspective(1000px) rotateY(0deg);
+}
+.box span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)* 45deg)) translateZ(350px);
+    -webkit-box-reflect: below 3px linear-gradient(transparent,#fae7e7);
+}
+.box span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+}
+.btns {
+    position:absolute;
+    bottom: 100px;
+    display: flex;
+    gap: 30px;
+}
+.btns .btn {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #1f05c9;
+    border-radius:100%;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    cursor: pointer;
+}
+.btns .btn .app{
+    position: relative;
+    left: 100%;
+}
+.btns .btn:active{
+    background: #069631;
+}
+.btns .btn::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-top: 3px solid #fff;
+    border-right: 3px solid #fff;
+    transform: rotate(45deg) translate(-2.5px, 2.5px);
+}
+.btns .btn.prev::before{
+    transform: rotate(225deg) translate(-2.5px, 2.5px);
+}     
+.btns .btn:active::before{
+    border-top: 3px solid #bb0505 ;
+    border-right:3px solid #2d0eb9;
+}
